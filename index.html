@@ -1,1 +1,9 @@
-hiii there
+<iframe src="editor/index.html"></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script charset="utf-8">
+  window.document.addEventListener('myCustomEvent', handleEvent, false)
+  function handleEvent(e) {
+    console.log(e.detail) // outputs: {foo: 'bar'}
+  }
+</script>
