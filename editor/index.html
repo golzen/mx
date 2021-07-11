@@ -42,9 +42,7 @@
 
 
     <script type="text/javascript">
-      var data = { foo: 'bar' }
-      var event = new CustomEvent('getCode', { detail: data })
-      window.parent.document.dispatchEvent(event)
+    window.top.postMessage('hello', '*');
 
         var dummy = {
         attrs: {

@@ -2,8 +2,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script charset="utf-8">
-  window.document.addEventListener('myCustomEvent', handleEvent, false)
-  function handleEvent(e) {
-    console.log(e.detail) // outputs: {foo: 'bar'}
-  }
+  window.onmessage = function(e){
+      if (e.data == 'hello') {
+          alert('It works!');
+      }
+  };
 </script>
