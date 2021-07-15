@@ -5,13 +5,13 @@
 */
 
 .cm-s-material-darker.CodeMirror {
-  background-color: #212121;
+  background-color: #171717;
   color: #EEFFFF;
 
 }
 
 .cm-s-material-darker .CodeMirror-gutters {
-  background: #212121;
+  background: #171717;
   color: #545454;
   border: none;
 }
@@ -133,5 +133,18 @@
 .cm-s-material-darker .CodeMirror-matchingbracket {
   text-decoration: underline;
   color: white !important;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.CodeMirror-vscrollbar::-webkit-scrollbar-track {
+  background: #211f1f;
+}
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+  background: #3a3838;
+}
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb:hover {
+  background: #171717;
 }
 {"mode":"full","isActive":false}
