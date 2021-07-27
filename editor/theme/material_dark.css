@@ -135,16 +135,5 @@
   color: white !important;
 }
 
-.CodeMirror-vscrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-.CodeMirror-vscrollbar::-webkit-scrollbar-track {
-  background: #211f1f;
-}
-.CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
-  background: #3a3838;
-}
-.CodeMirror-vscrollbar::-webkit-scrollbar-thumb:hover {
-  background: #171717;
-}
+
 {"mode":"full","isActive":false}

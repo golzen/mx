@@ -8,7 +8,7 @@ body
 {
   width: 100%;
   height: 6%;
-  background: black;
+  background: #171717;
 }
 
 .logo
@@ -76,7 +76,10 @@ flex-direction: column;
   overflow: auto;
   position: relative;
 
+
 }
+
+
 .editor textarea{
   width: 100%;
   height: 100%;
@@ -87,7 +90,7 @@ flex-direction: column;
   width: 8px;
 }
 .editArea::-webkit-scrollbar-track {
-  background: #211f1f;
+  background: #171717;
 }
 .editArea::-webkit-scrollbar-thumb {
   background: #3a3838;
@@ -98,6 +101,7 @@ flex-direction: column;
 
 .tab_box
 {
+  position: relative;
   padding: 7px 20px;
     color: white;
     float: left;
@@ -111,6 +115,8 @@ flex-direction: column;
          -moz-user-select: none; /* Old versions of Firefox */
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none;
+              -webkit-animation-name: bottomToTop;
+            -webkit-animation-duration: 0.2s;
 }
 .editorTab .active
 {
@@ -122,6 +128,7 @@ flex-direction: column;
   height: 12px;
   float: left;
   margin-right: 6px;
+  display: none;
 
 }
 .tab_box img
@@ -145,6 +152,16 @@ flex-direction: column;
     height: 15px;
   float: left;
 }
+.saved_state_icon
+{
+  width: 5px;
+    height: 5px;
+    background: orange;
+    float: left;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-top: 4px;
+}
 .draggable
 {
   width: 20px;
@@ -165,5 +182,111 @@ flex-direction: column;
 {
   z-index: 1;
   display: none;
-  background: #f2f2f2;
+  background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #000 10px,
+      #000 20px
+  );
+    background-size: cover;
+    -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.2s;
+}
+
+.file_navigator
+{
+  width: 17.6%;
+  height: 100%;
+  float: left;
+  overflow: auto;
+}
+.file_navigator .title
+{
+  position: relative;
+  padding: 0;
+    color: white;
+    float: left;
+    max-height: 100%;
+    font-size: 11px;
+    font-family: sans-serif;
+    cursor: default;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+  width: 100%;
+  height:auto;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 13px;
+  color:white
+}
+.file_explorer
+{
+
+  height: auto;
+  float:left;
+  margin-left: 10px;
+
+}
+
+
+
+.file_navigator::-webkit-scrollbar {
+  width: 8px;
+  height:8px;
+}
+.file_navigator::-webkit-scrollbar-track {
+  background: #211f1f;
+}
+.file_navigator::-webkit-scrollbar-thumb {
+  background: #3a3838;
+}
+.file_navigator::-webkit-scrollbar-thumb:hover {
+  background: #171717;
+}
+
+
+
+.file_explorer .title{
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  padding: 0;
+  margin-top:5px;
+}
+.list
+{
+  width: 98%;
+  height: 25px;
+  color:white;
+
+  margin-top: 3px;
+  float: left;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.list .material-icons
+{
+  font-size: 14px;
+  margin-left: 10px;
+}
+.list txt
+{
+  margin-left: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
 }

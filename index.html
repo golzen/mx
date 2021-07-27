@@ -1,9 +1,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/animation.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/show-hint.css">
-<link rel="stylesheet" href="editor/theme/material_dark.css">
-
+<link rel="stylesheet" href="editor/theme/editor.css">
+<link rel="stylesheet" href="editor/theme/one-dark.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 
 
@@ -11,6 +14,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/show-hint.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/xml-hint.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/edit/closetag.js" charset="utf-8"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/xml/xml.js"></script>
@@ -25,16 +29,25 @@
 <div class="nav">
 
   <div class="logo">
-    <img src="assets/img/logo.png" style="width:30px;height:30px;">
+    <img src="assets/img/logo.png" style="width:20px;height:20px;">
   </div>
 
 
 </div>
 
 <div class="main">
-  <div class="editorArea">
+  <div class="file_navigator">
+    <div class="title active">
+  <txt>Project</txt
+    ></div>
+
+
+
+
+
 
   </div>
+  <div class="editorArea"></div>
 </div>
 
 <div class="bottomNav"></div>
@@ -46,9 +59,17 @@
 
 </div>
 <script src="assets/js/basic.js" charset="utf-8"></script>
-<script src="lib/mx.js" charset="utf-8"></script>
+<script src="lib/work.js" charset="utf-8"></script>
+<script src="gate/main.js" charset="utf-8"></script>
+<script src="lib/fileExplorer.js" charset="utf-8"></script>
 
 <script src="lib/ed/functions.js" charset="utf-8"></script>
+
 <script src="lib/editor.js" charset="utf-8"></script>
 <script src="lib/tab.js" charset="utf-8"></script>
 <script src="lib/tab_bar.js" charset="utf-8"></script>
+<script src="lib/keydown.js" charset="utf-8"></script>
+<script src="lib/onload.js" charset="utf-8"></script>
+
+
+<script src="lib/mx.js" charset="utf-8"></script>

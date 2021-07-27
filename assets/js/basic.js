@@ -16,6 +16,26 @@ function makeid(length) {
    }
    return result;
 }
+function $v(x, y)
+{
+
+  if(localStorage.getItem(x)){
+    if(y == undefined){
+      return localStorage.getItem(x);
+  }else {
+    localStorage.setItem(x, y);
+    return y;
+  }
+
+  }else {
+
+    localStorage.setItem(x, y);
+    return y;
+
+  }
+
+
+}
 
 function getFilename(url)
 {
@@ -26,6 +46,17 @@ function getFilename(url)
          return m;
        }
 
+}
+function getFolderName(path)
+{
+  if(path)
+  {
+
+    var arr = path.split("/");
+    var m = arr[arr.length - 1];
+
+       return m;
+  }
 }
 
 function getExtension(name)
@@ -55,3 +86,59 @@ function getEditorType(ext)
   return r;
 
 }
+
+function escapeCode(x)
+{
+  var a = x.replace(/["]/g, "&#34;");
+  var b = a.replace(/[']/g, "&#39;");
+  var c = b.replace(/[<]/g, "&lt;");
+  var d = c.replace(/[>]/g, "&gt;");
+  return d;
+
+}
+
+function makeHTML(x)
+{
+  var a = x.replace(/&#34;/g, '"');
+  var b = a.replace(/&#39;/g, "'");
+  var c = b.replace(/&lt;/g, "<");
+  var d = c.replace(/&gt;/g, ">");
+  return d;
+
+}
+
+function pushUnique(arr, obj, val, newVal) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].fileUrl == obj){
+      arr[i].fileUrl = val;
+    }else{
+      arr.push(newVal);
+    };
+  }
+}
+
+function ary(){
+
+};
+ary.prototype.map = function(array, condition){
+
+  var stat = true;
+  if(array.length == 0){
+    condition(array, {});
+  }else{
+
+
+  for (let key in array) {
+
+    if(condition(array, array[key], key) == false){
+      stat = false;
+      break;
+
+    };
+  }
+}
+
+  return stat;
+
+}
+var ary = new ary();
