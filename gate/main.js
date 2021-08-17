@@ -19,7 +19,7 @@ gate.prototype.get = function(p)
        success: function(readed){
 
          var response = readed;
-         console.log(readed);
+    
          p.ondone(readed);
      },
 

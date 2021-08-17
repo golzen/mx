@@ -71,6 +71,11 @@ function getEditorType(ext)
   {
     r = "htmlmixed";
   }
+  if(ext == "php")
+  {
+    r = "application/x-httpd-php";
+  }
+
   if(ext == "css")
   {
     r = "css";
@@ -93,6 +98,7 @@ function escapeCode(x)
   var b = a.replace(/[']/g, "&#39;");
   var c = b.replace(/[<]/g, "&lt;");
   var d = c.replace(/[>]/g, "&gt;");
+  var d = c.replace(/[\r]/g, "");
   return d;
 
 }
@@ -107,6 +113,18 @@ function makeHTML(x)
 
 }
 
+
+function highlight(newElem, oldElem){
+  var oldText = oldElem,
+      text = '';
+  newElem.split('').forEach(function(val, i){
+    if (val != oldText.charAt(i))
+      text += "<span class='highlight'>"+val+"</span>";
+    else
+      text += val;
+  });
+  console.log(text);
+}
 function pushUnique(arr, obj, val, newVal) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].fileUrl == obj){
@@ -123,14 +141,17 @@ function ary(){
 ary.prototype.map = function(array, condition){
 
   var stat = true;
+  var ar = {array: array, el: [], key: 0};
   if(array.length == 0){
-    condition(array, {});
+    condition(ar);
   }else{
 
 
   for (let key in array) {
 
-    if(condition(array, array[key], key) == false){
+    var arKey = array[key];
+    var ar = {array: array, key: key, el: arKey};
+    if(condition(ar) == false){
       stat = false;
       break;
 

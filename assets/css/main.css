@@ -3,17 +3,78 @@ body
   margin: 0;
 }
 
+.loader{
+  width: 100%;
+  height: 100%;
+  background:#151515;
+  position:fixed;
+  z-index: 1000;
+  top:0;
+  left:0;
+  right:0;
+
+}
+
+.logo_area{
+  width:250px;
+  height:220px;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+}
+.logo_img{
+  width:100%;
+  height: 160px;
+}
+.logo_img img{
+  width:60%;
+  height: 100%;
+}
+.loading_area{
+  width: 100%;
+  height: 60px;
+
+}
+.progress_bar{
+  width: 43%;
+  height: 10px;
+  background: white;
+  margin-top:-10px;
+}
+.progress_bar span{
+  width: 0%;
+  height: 100%;
+  background:#2196f3;
+  float:left;
+}
 /* Nav CSS */
 .nav
 {
   width: 100%;
   height: 6%;
-  background: #171717;
+  background: #151515;
+  border-bottom: 1px solid #282c34;
+
 }
 
-.logo
-{
+.nav .ar_pub{
   width: 100px;
+  height: 100%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color: white;
+  font-size: 12px;
+
+}
+.nav .ar_tool{
+  width: 400px;
   height: 100%;
   float: left;
   display: flex;
@@ -21,6 +82,52 @@ body
   align-items: center;
   font-family: sans-serif;
   color: white;
+  font-size: 12px;
+  margin-left: 10px
+
+}
+.ar_tool .row{
+  width: 100%;
+  height: 60%;
+}
+.row .tools{
+  float:left;
+  padding: 5px 5px;
+  cursor: default;
+
+}
+.tools:hover{
+  background: #252525;
+  border-radius: 20px;
+}
+.btn_pub{
+  padding: 6px 20px;
+  background: #2196f3;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+
+}
+
+.logo
+{
+  width: 100px;
+  height: 6%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  left:0;
+  right:0;
+  margin: auto;
+
 
 }
 
@@ -28,22 +135,22 @@ body
 .main
 {
   width: 100%;
-  height:90%;
-  background: #171717;
+  height:90.9%;
+  background: #151515;
   overflow-x: hidden;
 }
 
 .bottomNav
 {
   width: 100%;
-  height:4%;
-  background: black;
+  height:3%;
+  background: #232323;
 }
 
 /* Editor Area */
 
 .editorArea{
-  width: 82%;
+  width: 85%;
   height: 100%;
   float: right;
   border-left: 1px solid #333333;
@@ -51,6 +158,7 @@ body
   display: flex;
 flex-wrap: wrap;
 flex-direction: column;
+/* display: none; */
 
 
 }
@@ -66,7 +174,8 @@ flex-direction: column;
 {
   width: 100%;
   height: 26px;
-  background: #232323;
+  background: #151515;
+    border-bottom: 1px solid #282c34;
 
 }
 .editor .editArea
@@ -120,7 +229,7 @@ flex-direction: column;
 }
 .editorTab .active
 {
-  background: #171717;
+  background: #252525;
 }
 .tab_box span
 {
@@ -137,6 +246,15 @@ flex-direction: column;
   height: 12px;
   float: left;
 }
+.clickArea{
+  position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    left: 30px;
+    z-index: 10;
+}
+
 .editorTab .add_box
 {
   width: 22px;
@@ -183,12 +301,11 @@ flex-direction: column;
   z-index: 1;
   display: none;
   background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 10px,
-      #000 10px,
-      #000 20px
-  );
+    45deg,
+    transparent,
+    transparent 10px,
+    #21252b 10px,
+    #282c34 20px);
     background-size: cover;
     -webkit-animation-name: zoomIn;
   -webkit-animation-duration: 0.2s;
@@ -196,10 +313,22 @@ flex-direction: column;
 
 .file_navigator
 {
-  width: 17.6%;
+  width: 14.9%;
   height: 100%;
   float: left;
   overflow: auto;
+  position: relative;
+  /*border-right: 1px solid green;*/
+
+}
+.file_navigator .resizer{
+   position: absolute;
+   right:0;
+   top:0;
+   bottom:0;
+   width:1px;
+   height: 100%;
+   cursor: e-resize;
 }
 .file_navigator .title
 {
@@ -207,7 +336,6 @@ flex-direction: column;
   padding: 0;
     color: white;
     float: left;
-    max-height: 100%;
     font-size: 11px;
     font-family: sans-serif;
     cursor: default;
@@ -218,11 +346,24 @@ flex-direction: column;
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none;
   width: 100%;
-  height:auto;
+  height:26px;
   text-align: center;
   font-family: sans-serif;
   font-size: 13px;
-  color:white
+  color:white;
+  border-bottom: 1px solid #282c34;
+  margin-bottom: 5px;
+}
+.file_navigator .cnt{
+  text-align: left;
+  margin-left: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.file_navigator txt{
+  font-size: 12px;
+  margin-left: 12px;
 }
 .file_explorer
 {
@@ -263,7 +404,7 @@ flex-direction: column;
 {
   width: 98%;
   height: 25px;
-  color:white;
+
 
   margin-top: 3px;
   float: left;
@@ -276,6 +417,10 @@ flex-direction: column;
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
+            color:white;
+}
+.list:hover{
+  background-color:#252525;
 }
 .list .material-icons
 {
@@ -289,4 +434,234 @@ flex-direction: column;
   font-family: sans-serif;
   display: flex;
   align-items: center;
+}
+
+
+.tooltip {
+  position: relative;
+
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.resizerHolder{
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  right:0;
+  top:0;
+  bottom: 0;
+  cursor: col-resize;
+}
+.displayz{
+  display: none;
+}
+
+.win_drager_area{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display:none;
+  z-index:5;
+  top:0;
+}
+.ar_left_fh{
+  width:50%;
+  height:100%;
+  position: absolute;
+  left:0;
+}
+.ar_right_fh{
+  width:50%;
+  height:100%;
+  position: absolute;
+  right:0;
+}
+.ar_top_fw{
+  width:50%;
+  height:50%;
+  position: absolute;
+  right:0;
+  left:0;
+  margin:auto;
+}
+.ar_bottom_fw{
+  width:50%;
+  height:50%;
+  position: absolute;
+  right:0;
+  left:0;
+  bottom:0;
+  margin:auto;
+}
+.area_left_fh{
+  width:50%;
+  height:100%;
+  position: absolute;
+  left:0;
+}
+.area_right_fh{
+  width:50%;
+  height:100%;
+  position: absolute;
+  right:0;
+}
+.area_top_fw{
+  width:100%;
+  height:50%;
+  position: absolute;
+  right:0;
+  left:0;
+  margin:auto;
+}
+.area_bottom_fw{
+  width:100%;
+  height:50%;
+  position: absolute;
+  right:0;
+  left:0;
+  bottom:0;
+  margin:auto;
+}
+
+.fadescreen{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.3;
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.screen{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+  z-index: 10000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.dialog{
+  width: 400px;
+  min-height: 130px;
+  height: auto;
+
+  background: #131313;
+
+  z-index: 1000;
+
+
+  border-radius: 6px;
+  overflow:hidden;
+  transition: 0.5s;
+  animation-name: popup;
+  animation-duration: 0.3s;
+}
+.dialog .title{
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #211f1f;
+
+  float:left;
+  background: #292b2d;
+
+}
+
+.dialog h3{
+  padding: 6px 15px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #d3d5d6;
+  float:left;
+  font-weight: 20;
+}
+
+.dialog .cont{
+  padding: 4px 12px;
+  color: white;
+  float: left;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  color: #b1b1b1;
+
+
+
+}
+
+.cont b{
+  color: #03a9f4;
+}
+.cont underlined{
+  text-decoration: underline;
+}
+.dialog .btnArea{
+  width: 100%;
+  height:auto;
+  float:left;
+  margin-top:20px;
+
+}
+.dialog .btn{
+  padding: 10px 26px;
+  color: white;
+  background: #292b2d;
+  float: right;
+  font-family: sans-serif;
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: default;
+
+}
+.btn:hover{
+  background: #1d1d1d;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  background:white;
 }

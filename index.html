@@ -2,44 +2,123 @@
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/animation.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/show-hint.css">
+
 <link rel="stylesheet" href="editor/theme/editor.css">
 <link rel="stylesheet" href="editor/theme/one-dark.css">
+<link rel="stylesheet" href="editor/theme/colors.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/show-hint.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/hint/xml-hint.js" charset="utf-8"></script>
+<script src="lib/ed/showHint.js" charset="utf-8"></script>
+<script src="lib/ed/xml-hints.js" charset="utf-8"></script>
+<script src="lib/ed/js-hints.js" charset="utf-8"></script>
+<script src="lib/ed/php-hints.js" charset="utf-8"></script>
+<script src="lib/ed/css-hints.js" charset="utf-8"></script>
+<script src="lib/ed/anyword-hints.js" charset="utf-8"></script>
+<script src="lib/ed/match-bracket.js" charset="utf-8"></script>
+<script src="lib/ed/active-line.js" charset="utf-8"></script>
+<script src="lib/ed/match-tags.js" charset="utf-8"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/foldcode.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/foldgutter.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/brace-fold.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/xml-fold.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/indent-fold.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/markdown-fold.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/fold/comment-fold.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/edit/closetag.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/edit/closebrackets.js" charset="utf-8"></script>
+
+
+<script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+<script src="https://unpkg.com/jsonlint@1.6.3/web/jsonlint.js"></script>
+<script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/lint/lint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/lint/javascript-lint.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/lint/json-lint.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/addon/lint/css-lint.js" ></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/xml/xml.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/css/css.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/javascript/javascript.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/php/php.js"></script>
+<script src="lib/ed/syntax/php.js"></script>
+<script src="lib/ed/syntax/clike.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/mode/htmlmixed/htmlmixed.js"></script>
+<script src="lib/ed/functions.js" charset="utf-8"></script>
 
 
+<div class="loader">
+  <div class="logo_area">
+    <div class="logo_img">
+      <center>
+        <img src="assets/img/logo.png">
+      </center>
+    </div>
 
-
-<div class="nav">
-
-  <div class="logo">
-    <img src="assets/img/logo.png" style="width:20px;height:20px;">
+    <div class="loading_area">
+      <center>
+      <div class="progress_bar">
+        <span></span>
+      </div>
+      </center>
+    </div>
   </div>
+</div>
+<div class="nav">
+  <div class="ar_tool">
+
+    <div class="row">
+      <div class="tools" title="Run (Ctrl+R)">
+        <span class="material-icons">play_arrow</span>
+      </div>
+      <div class="tools layout_btn" title="Layout (Ctrl+L)">
+        <span class="material-icons">view_carousel</span>
+      </div>
+      <div class="tools" title="Run (Ctrl+R)">
+        <span class="material-icons">visibility</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="logo">
+
+     Mx Code
+
+  </div>
+
+  <div class="ar_pub">
+    <div class="btn_pub">
+
+      Publish
+
+    </div>
+  </div>
+
 
 
 </div>
 
 <div class="main">
   <div class="file_navigator">
+
     <div class="title active">
-  <txt>Project</txt
-    ></div>
+
+      <div class="cnt" style="float: left">
+
+        <span class="material-icons ico" style="font-size: 15px;" title="Close Files">expand_more</span>
+        <txt>Project</txt>
+      </div>
+      <div class="cnt" style="float: right">
+        <span class="material-icons ico"  style="font-size: 15px;" title="New File">insert_drive_file </span>
+        <span class="material-icons ico" style="font-size: 15px;margin-left: 5px;margin-right: 5px;" title="New Folder">create_new_folder</span>
+      </div>
+    </div>
 
 
 
@@ -58,18 +137,37 @@
 <div class="win_drager_raw">
 
 </div>
+<div class="draggable"></div>
+<div class="fadescreen"></div>
+<div class="screen">
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.js" charset="utf-8"></script>
 <script src="assets/js/basic.js" charset="utf-8"></script>
+
 <script src="lib/work.js" charset="utf-8"></script>
+<script src="gate/permission.js" charset="utf-8"></script>
+<script src="lib/dialog.js" charset="utf-8"></script>
 <script src="gate/main.js" charset="utf-8"></script>
 <script src="lib/fileExplorer.js" charset="utf-8"></script>
 
-<script src="lib/ed/functions.js" charset="utf-8"></script>
+
 
 <script src="lib/editor.js" charset="utf-8"></script>
+<script src="lib/previewEngine.js" charset="utf-8"></script>
 <script src="lib/tab.js" charset="utf-8"></script>
 <script src="lib/tab_bar.js" charset="utf-8"></script>
 <script src="lib/keydown.js" charset="utf-8"></script>
 <script src="lib/onload.js" charset="utf-8"></script>
 
 
+<script src="lib/resizer.js" charset="utf-8"></script>
+
+
+<script src="lib/universal.js" charset="utf-8"></script>
+
 <script src="lib/mx.js" charset="utf-8"></script>
+
+<script src="api/main.js" charset="utf-8"></script>
+
+<script src="lib/tools.js" charset="utf-8"></script>
